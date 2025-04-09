@@ -10,18 +10,19 @@ Chatbot.init({
             backgroundColor: '#2B6CB0',
             right: 20,
             bottom: 20,
-            size: 'large',
-            dragAndDrop: true,
+            // size: 'large', // Potresti provare 'medium' o lasciare 'large' e vedere come va
+            size: 'medium', // Cambiato a medium per un miglior bilanciamento
+            dragAndDrop: false, // MODIFICATO: Disabilitato drag and drop per migliore usabilità mobile
             iconColor: 'white',
             customIconSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/refs/heads/deploy-setup/assets/images/avatars/peeragogybot-avatar-white.svg',
             autoWindowOpen: {
                 autoOpen: true,
                 openDelay: 1000,
-                autoOpenOnMobile: false
+                autoOpenOnMobile: false // MANTENUTO: Corretto per mobile
             }
         },
         tooltip: {
-            showTooltip: true,
+            showTooltip: true, // Meno rilevante su mobile, ma innocuo
             tooltipMessage: 'Need help exploring peeragogy?',
             tooltipBackgroundColor: '#2B6CB0',
             tooltipTextColor: 'white',
@@ -46,11 +47,11 @@ Chatbot.init({
             errorMessage: 'Something went wrong. Try again or refresh the page.',
             backgroundColor: '#ffffff',
             backgroundImage: '',
-            height: 700,
-            width: 400,
+            // height: 700, // RIMOSSO: Gestito da customCSS per reattività
+            // width: 400, // RIMOSSO: Gestito da customCSS per reattività
             fontSize: 16,
-            starterPrompts: [], // Corretto: Era un array definito male
-            starterPromptFontSize: 15, // Ora è una proprietà valida separata da starterPrompts
+            starterPrompts: [],
+            starterPromptFontSize: 15,
             showStarterPrompts: true,
             clearChatOnReload: false,
             sourceDocsTitle: 'Source:',
@@ -86,17 +87,41 @@ Chatbot.init({
                 showDateTime: true,
                 showDate: true,
                 showTime: true
-            }, // Virgola aggiunta se mancante (era presente nel tuo ultimo codice)
+            },
             footer: {
                 textColor: "#a0a0a0",
                 text: "π Nexus – v1.1.8",
                 company: "Co-created by Fabrizio Terzi + OpenAI",
                 companyLink: "https://github.com/FTG-003"
-            } // Corretto: Rimossa parentesi graffa extra che era qui
-        }, // Questa virgola chiude l'oggetto chatWindow
+            }
+        },
+        // --- INIZIO MODIFICHE MOBILE FRIENDLY ---
         customCSS: `
-      /* Example: Customize button size if needed */
-      /* .chat-button { width: 56px !important; height: 56px !important; } */
-    `
-    } // Questa graffa chiude l'oggetto theme
+            /* Stili di default per desktop (la libreria potrebbe applicare width/height di default) */
+            flowise-chat-embed {
+                 /* Potresti voler definire qui dimensioni massime per desktop se necessario */
+                 /* Esempio: max-width: 450px; max-height: 750px; */
+            }
+
+            /* Media Query per schermi più piccoli (es. telefoni) */
+            @media (max-width: 600px) {
+                flowise-chat-embed::part(chat-window) { /* Selettore specifico per la shadow part, potrebbe cambiare a seconda della versione della libreria */
+                    width: 90vw !important;   /* Larghezza: 90% della larghezza della viewport */
+                    max-width: 400px !important; /* Limite massimo alla larghezza */
+                    height: 85vh !important;  /* Altezza: 85% dell'altezza della viewport */
+                    max-height: 700px !important; /* Limite massimo all'altezza */
+                    right: 10px !important;   /* Più vicino al bordo su schermi piccoli */
+                    bottom: 10px !important;  /* Più vicino al bordo su schermi piccoli */
+                    /* Potresti dover aggiungere !important per sovrascrivere gli stili inline della libreria */
+                }
+
+                 /* Opzionale: Riduci la dimensione del pulsante se 'medium' non basta */
+                 /* flowise-chat-embed::part(button) {
+                    width: 50px !important;
+                    height: 50px !important;
+                 } */
+            }
+        `
+        // --- FINE MODIFICHE MOBILE FRIENDLY ---
+    }
 });
