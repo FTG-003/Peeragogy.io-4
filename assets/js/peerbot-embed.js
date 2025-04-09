@@ -7,14 +7,15 @@ Chatbot.init({
     observersConfig: {},
     theme: {
         button: {
-            backgroundColor: '#2B6CB0',
+            // --- MODIFICHE TEMA CHIARO ---
+            backgroundColor: '#4A5568', // Grigio medio-scuro come accento
+            iconColor: 'white', // Icona bianca per contrasto
+            // --- FINE MODIFICHE ---
             right: 20,
             bottom: 20,
-            // size: 'large', // Potresti provare 'medium' o lasciare 'large' e vedere come va
-            size: 'medium', // Cambiato a medium per un miglior bilanciamento
-            dragAndDrop: false, // MODIFICATO: Disabilitato drag and drop per migliore usabilità mobile
-            iconColor: 'white',
-            customIconSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/refs/heads/deploy-setup/assets/images/avatars/peeragogybot-avatar-white.svg',
+            size: 'medium', // Mantenuto 'medium' per bilanciamento
+            dragAndDrop: false, // Mantenuto: Disabilitato per mobile
+            customIconSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/refs/heads/deploy-setup/assets/images/avatars/peeragogybot-avatar-white.svg', // Potresti volere un'icona scura se lo sfondo diventa chiaro
             autoWindowOpen: {
                 autoOpen: true,
                 openDelay: 1000,
@@ -22,33 +23,37 @@ Chatbot.init({
             }
         },
         tooltip: {
-            showTooltip: true, // Meno rilevante su mobile, ma innocuo
+            showTooltip: true,
             tooltipMessage: 'Need help exploring peeragogy?',
-            tooltipBackgroundColor: '#2B6CB0',
-            tooltipTextColor: 'white',
+            // --- MODIFICHE TEMA CHIARO ---
+            tooltipBackgroundColor: '#4A5568', // Stesso accento del bottone
+            tooltipTextColor: 'white', // Testo bianco per contrasto
+            // --- FINE MODIFICHE ---
             tooltipFontSize: 14
         },
         disclaimer: {
             showDisclaimer: true,
             title: 'Peeragogy Handbook ChatBot',
             message: "By chatting here, you’re interacting with an AI trained on the Peeragogy Handbook. Peer-powered answers ahead!",
-            textColor: '#1a202c',
-            buttonColor: '#2B6CB0',
+            // --- MODIFICHE TEMA CHIARO ---
+            textColor: '#2D3748', // Grigio scuro per testo principale
+            buttonColor: '#4A5568', // Accento per il bottone
             buttonText: 'Let’s Go!',
-            buttonTextColor: 'white',
-            blurredBackgroundColor: 'rgba(0, 0, 0, 0.3)',
-            backgroundColor: '#f0f4f8'
+            buttonTextColor: 'white', // Testo bianco sul bottone
+            blurredBackgroundColor: 'rgba(200, 200, 200, 0.5)', // Sfondo sfocato più chiaro
+            backgroundColor: '#ffffff' // Sfondo bianco per il disclaimer
+            // --- FINE MODIFICHE ---
         },
         chatWindow: {
             showTitle: true,
             title: 'PeeragogyBot',
-            titleAvatarSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/deploy-setup/assets/images/avatars/logo.svg',
+            titleAvatarSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/deploy-setup/assets/images/avatars/logo.svg', // Assicurati che il logo sia visibile su sfondo chiaro
             welcomeMessage: '👋 Welcome! I’m your PeeragogyBot',
             errorMessage: 'Something went wrong. Try again or refresh the page.',
-            backgroundColor: '#ffffff',
+            // --- MODIFICHE TEMA CHIARO ---
+            backgroundColor: '#ffffff', // Sfondo bianco principale
+            // --- FINE MODIFICHE ---
             backgroundImage: '',
-            // height: 700, // RIMOSSO: Gestito da customCSS per reattività
-            // width: 400, // RIMOSSO: Gestito da customCSS per reattività
             fontSize: 16,
             starterPrompts: [],
             starterPromptFontSize: 15,
@@ -57,22 +62,28 @@ Chatbot.init({
             sourceDocsTitle: 'Source:',
             renderHTML: true,
             botMessage: {
-                backgroundColor: '#f0f4f8',
-                textColor: '#1a202c',
+                // --- MODIFICHE TEMA CHIARO ---
+                backgroundColor: '#EDF2F7', // Grigio molto chiaro per messaggi bot
+                textColor: '#1A202C', // Testo nero/scuro
+                // --- FINE MODIFICHE ---
                 showAvatar: true,
                 avatarSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/deploy-setup/assets/images/avatars/logo.svg'
             },
             userMessage: {
-                backgroundColor: '#2B6CB0',
-                textColor: '#ffffff',
+                // --- MODIFICHE TEMA CHIARO ---
+                backgroundColor: '#4A5568', // Accento grigio per messaggi utente
+                textColor: '#ffffff', // Testo bianco
+                // --- FINE MODIFICHE ---
                 showAvatar: true,
-                avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
+                avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png' // Assicurati che l'icona utente stia bene
             },
             textInput: {
                 placeholder: 'Your co-learning journey starts here',
-                backgroundColor: '#ffffff',
-                textColor: '#1a202c',
-                sendButtonColor: '#2B6CB0',
+                // --- MODIFICHE TEMA CHIARO ---
+                backgroundColor: '#ffffff', // Sfondo bianco
+                textColor: '#1A202C', // Testo scuro
+                sendButtonColor: '#4A5568', // Colore accento per l'icona invio
+                // --- FINE MODIFICHE ---
                 maxChars: 200,
                 maxCharsWarningMessage: 'Try to keep your question under 200 characters.',
                 autoFocus: true,
@@ -81,47 +92,44 @@ Chatbot.init({
             },
             feedback: {
                 type: 'thumbs',
-                color: '#1a202c'
+                // --- MODIFICHE TEMA CHIARO ---
+                color: '#718096' // Grigio medio per icone feedback
+                // --- FINE MODIFICHE ---
             },
             dateTime: {
                 showDateTime: true,
                 showDate: true,
                 showTime: true
+                // Colore del testo data/ora erediterà probabilmente da stili generali o usa un grigio di default
             },
             footer: {
-                textColor: "#a0a0a0",
+                // --- MODIFICHE TEMA CHIARO ---
+                textColor: "#a0aec0", // Grigio più chiaro per il footer
+                // --- FINE MODIFICHE ---
                 text: "π Nexus – v1.1.8",
                 company: "Co-created by Fabrizio Terzi + OpenAI",
                 companyLink: "https://github.com/FTG-003"
             }
         },
-        // --- INIZIO MODIFICHE MOBILE FRIENDLY ---
+        // --- CSS CUSTOM PER MOBILE FRIENDLINESS MANTENUTO ---
         customCSS: `
-            /* Stili di default per desktop (la libreria potrebbe applicare width/height di default) */
+            /* Stili di default per desktop */
             flowise-chat-embed {
-                 /* Potresti voler definire qui dimensioni massime per desktop se necessario */
                  /* Esempio: max-width: 450px; max-height: 750px; */
             }
 
             /* Media Query per schermi più piccoli (es. telefoni) */
             @media (max-width: 600px) {
-                flowise-chat-embed::part(chat-window) { /* Selettore specifico per la shadow part, potrebbe cambiare a seconda della versione della libreria */
-                    width: 90vw !important;   /* Larghezza: 90% della larghezza della viewport */
-                    max-width: 400px !important; /* Limite massimo alla larghezza */
-                    height: 85vh !important;  /* Altezza: 85% dell'altezza della viewport */
-                    max-height: 700px !important; /* Limite massimo all'altezza */
-                    right: 10px !important;   /* Più vicino al bordo su schermi piccoli */
-                    bottom: 10px !important;  /* Più vicino al bordo su schermi piccoli */
-                    /* Potresti dover aggiungere !important per sovrascrivere gli stili inline della libreria */
+                flowise-chat-embed::part(chat-window) {
+                    width: 90vw !important;
+                    max-width: 400px !important;
+                    height: 85vh !important;
+                    max-height: 700px !important;
+                    right: 10px !important;
+                    bottom: 10px !important;
                 }
-
-                 /* Opzionale: Riduci la dimensione del pulsante se 'medium' non basta */
-                 /* flowise-chat-embed::part(button) {
-                    width: 50px !important;
-                    height: 50px !important;
-                 } */
             }
         `
-        // --- FINE MODIFICHE MOBILE FRIENDLY ---
+        // --- FINE CSS CUSTOM ---
     }
 });
