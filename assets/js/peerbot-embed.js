@@ -48,7 +48,7 @@ Chatbot.init({
             showTitle: true,
             title: 'PeeragogyBot',
             titleAvatarSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/deploy-setup/assets/images/avatars/logo.svg', // Assicurati che il logo sia visibile su sfondo chiaro
-            welcomeMessage: '👋 Welcome! I’m your PeeragogyBot',
+            welcomeMessage: '👋 Welcome! This bot is trained on the Peeragogy Handbook. Let’s co-learn!',
             errorMessage: 'Something went wrong. Try again or refresh the page.',
             // --- MODIFICHE TEMA CHIARO ---
             backgroundColor: '#ffffff', // Sfondo bianco principale
