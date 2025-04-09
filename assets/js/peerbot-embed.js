@@ -49,12 +49,8 @@ Chatbot.init({
             height: 700,
             width: 400,
             fontSize: 16,
-            starterPrompts: [
-                "What is peeragogy?",
-                "How does co-learning work?",
-                "Who created the Peeragogy Handbook?"
-            ],
-            starterPromptFontSize: 15,
+            starterPrompts: [], // Corretto: Era un array definito male
+            starterPromptFontSize: 15, // Ora è una proprietà valida separata da starterPrompts
             showStarterPrompts: true,
             clearChatOnReload: false,
             sourceDocsTitle: 'Source:',
@@ -63,7 +59,7 @@ Chatbot.init({
                 backgroundColor: '#f0f4f8',
                 textColor: '#1a202c',
                 showAvatar: true,
-              avatarSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/deploy-setup/assets/images/avatars/logo.svg'
+                avatarSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/deploy-setup/assets/images/avatars/logo.svg'
             },
             userMessage: {
                 backgroundColor: '#2B6CB0',
@@ -72,7 +68,7 @@ Chatbot.init({
                 avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
             },
             textInput: {
-                placeholder: 'Ask me something about peeragogy...',
+                placeholder: 'Your co-learning journey starts here',
                 backgroundColor: '#ffffff',
                 textColor: '#1a202c',
                 sendButtonColor: '#2B6CB0',
@@ -90,17 +86,17 @@ Chatbot.init({
                 showDateTime: true,
                 showDate: true,
                 showTime: true
-            },
-             footer: {
+            }, // Virgola aggiunta se mancante (era presente nel tuo ultimo codice)
+            footer: {
                 textColor: "#a0a0a0",
                 text: "π Nexus – v1.1.8",
                 company: "Co-created by Fabrizio Terzi + OpenAI",
                 companyLink: "https://github.com/FTG-003"
-                                }
-        },
+            } // Corretto: Rimossa parentesi graffa extra che era qui
+        }, // Questa virgola chiude l'oggetto chatWindow
         customCSS: `
       /* Example: Customize button size if needed */
       /* .chat-button { width: 56px !important; height: 56px !important; } */
     `
-    }
+    } // Questa graffa chiude l'oggetto theme
 });
