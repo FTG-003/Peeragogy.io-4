@@ -42,7 +42,7 @@ Chatbot.init({
             showTitle: true,
             title: 'PeeragogyBot',
             titleAvatarSrc: 'https://raw.githubusercontent.com/FTG-003/Peeragogy_ChatBot/deploy-setup/assets/images/avatars/logo.svg',
-            welcomeMessage: '👋 Welcome! I’m PeeragogyBot – your assistant for exploring the Peeragogy Handbook. Ask me anything about co-learning, peer strategies, or the handbook itself!',
+            welcomeMessage: '👋 Welcome! I’m your PeeragogyBot',
             errorMessage: 'Something went wrong. Try again or refresh the page.',
             backgroundColor: '#ffffff',
             backgroundImage: '',
