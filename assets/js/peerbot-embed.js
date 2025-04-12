@@ -1,7 +1,7 @@
 import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
 
 Chatbot.init({
-    chatflowid: "d5f669ab-e063-4302-bea8-8ea55335603b",
+    chatflowid: "45801d80-fbe8-4525-b4de-a95eeb72db90",
     apiHost: "https://peeragogybot-flowise-production-68ec.up.railway.app",
     chatflowConfig: {},
     observersConfig: {},
